@@ -26,3 +26,9 @@ Start the service and deploy app
 ```
 fab -f  provision.py deploy
 ```
+
+# Deployment
+
+```
+fab -f  deployment.py deploy
+```

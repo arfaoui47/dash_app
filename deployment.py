@@ -10,6 +10,5 @@ def deploy():
 		run('git pull')
 		run('venv/bin/pip install -r requirements.txt')
 
-
+	sudo('systemctl restart dash_app')
 	sudo('service nginx restart')
-
