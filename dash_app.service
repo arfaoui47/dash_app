@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn instance to serve dash app
+After=network.target
+
+[Service]
+User=dash
+Group=www-data
+WorkingDirectory=/home/dash/dash_app
+Environment="PATH=/home/dash/dash_app/venv/bin"
+ExecStart=/home/dash/dash_app/venv/bin/gunicorn --workers 3 --bind unix:dash_app.sock -m 007 web_app:server
+
+[Install]
+WantedBy=multi-user.target
