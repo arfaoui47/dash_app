@@ -29,3 +29,4 @@ def deploy():
     run('venv/bin/pip install -r requirements.txt')
     sudo('systemctl start dash_app')
     sudo('systemctl enable dash_app')
+    sudo('service nginx restart')
